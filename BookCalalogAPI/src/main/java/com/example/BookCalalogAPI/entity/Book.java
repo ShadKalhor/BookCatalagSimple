@@ -1,9 +1,6 @@
 package com.example.BookCalalogAPI.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -24,7 +21,8 @@ public class Book {
     private String title;
     private String author;
     private BigDecimal price;
-    private String publishedYear;
+    @JoinColumn(name = "published_year")
+    private int publishedYear;
 
 
     @PrePersist

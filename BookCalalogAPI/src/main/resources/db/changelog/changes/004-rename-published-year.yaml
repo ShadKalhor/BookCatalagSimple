@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-rename-published-year
+      author: shad
+      changes:
+        - renameColumn:
+            tableName: books
+            oldColumnName: publishedYear
+            newColumnName: published_year
+            columnDataType: smallint

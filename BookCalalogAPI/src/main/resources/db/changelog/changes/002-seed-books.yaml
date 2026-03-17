@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-seed-books
+      author: shad
+      changes:
+        - loadData:
+            file: db/data/records.csv
+            tableName: books
+            separator: ","
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+              - column:
+                  name: title
+                  type: STRING
+              - column:
+                  name: author
+                  type: STRING
+              - column:
+                  name: price
+                  type: NUMERIC
+              - column:
+                  name: publishedYear
+                  type: NUMERIC
